@@ -98,7 +98,7 @@
     });
 
     // Check if valid background hex color
-    if ((/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i).test(this.options.background)) {
+    if ((/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)|(transparent)/i).test(this.options.background)) {
       this.setStyles(this.bgDiv, {
         'background': this.options.background
       });
