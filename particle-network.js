@@ -128,6 +128,7 @@
     this.ctx = this.canvas.getContext('2d');
     this.canvas.width = this.canvasDiv.size.width;
     this.canvas.height = this.canvasDiv.size.height;
+    this.canvas.className = 'particle-canvas';
     this.setStyles(this.canvasDiv, { 'position': 'relative' });
     this.setStyles(this.canvas, {
       'z-index': '20',
