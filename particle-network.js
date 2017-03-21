@@ -62,6 +62,19 @@
     this.ctx.fill();
   };
 
+  Particle.prototype.isInsideParticlesArea = function (area) {
+    var x1 = area.x1
+    var x2 = area.x2
+    var y1 = area.y1
+    var y2 = area.y2
+
+    if (this.x >= x1 && this.x <= x2 && this.y >= y1 && this.y <= y2) {
+      return true;
+    }
+
+    return false;
+  };
+
   // Create ParticleNetwork class
   ParticleNetwork = function (canvas, options) {
 
@@ -78,7 +91,8 @@
       background: (options.background !== undefined) ? options.background : '#1a252f',
       interactive: (options.interactive !== undefined) ? options.interactive : true,
       velocity: this.setVelocity(options.speed),
-      density: this.setDensity(options.density)
+      density: this.setDensity(options.density),
+      particleNetworkDrawingArea: (options.particleNetworkDrawingArea !== undefined) ? options.particleNetworkDrawingArea : null
     };
 
     this.init();
@@ -222,6 +236,11 @@
           + Math.pow(this.particles[i].y - this.particles[j].y, 2)
         );
         if (distance > 120) {
+          continue;
+        }
+
+        // If area specified, check if particle is inside the restricted particles drawing and draw only if included
+        if (this.options.particleNetworkDrawingArea != null && !this.particles[i].isInsideParticlesArea(this.options.particleNetworkDrawingArea)) {
           continue;
         }
 
