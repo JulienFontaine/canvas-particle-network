@@ -248,6 +248,9 @@
     else if (speed === 'slow') {
       return 0.33;
     }
+    else if (speed === 'turtle') {
+      return 0.05;
+    }
     else if (speed === 'none') {
       return 0;
     }

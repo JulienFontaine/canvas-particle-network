@@ -74,6 +74,7 @@ Default: `medium`
 Velocity of the particles. Must be one of the following:
 
 * `none`
+* `turtle`
 * `slow`
 * `medium`
 * `fast`
