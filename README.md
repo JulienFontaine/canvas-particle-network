@@ -71,13 +71,18 @@ Allow users to click on the canvas to create a new particle. Its velocity will d
 Type: `String`  
 Default: `medium`
 
-Velocity of the particles. Must be one of the following:
+Velocity of the particles. Can be one of the following:
 
 * `none`
 * `turtle`
 * `slow`
 * `medium`
 * `fast`
+
+Or use a float value between 0 and 1
+```js
+speed: 0.1
+```
 
 #### options.density
 

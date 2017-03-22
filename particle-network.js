@@ -265,11 +265,15 @@
       return 0.33;
     }
     else if (speed === 'turtle') {
-      return 0.05;
+      return 0.1;
     }
     else if (speed === 'none') {
       return 0;
     }
+    else if (!isNaN(speed)) {
+      return speed;
+    }
+
     return 0.66;
   }
   // Helper method to set density multiplier
